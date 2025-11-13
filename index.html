@@ -4,214 +4,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Design System Demo</title>
-    <link rel="stylesheet" href="design-system.css"> <!-- your master CSS -->
+    <title>Modern Landing Page</title>
+    <link rel="stylesheet" href="design-system.css">
     <style>
-        body {
-            margin: 0;
+        /* Additional styles specific to this landing page */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary), #4a6fff);
+            color: white;
+            padding: var(--space-xxl) 0;
+            text-align: center;
         }
 
-        section {
-            margin-bottom: 48px;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-xxl) 0;
         }
 
-        h1,
-        h2,
-        h3 {
-            margin-bottom: 16px;
+        .feature-card {
+            text-align: center;
+            padding: var(--space-xl);
         }
 
-        .demo-card {
-            margin-bottom: 16px;
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: var(--space-md);
+            color: var(--color-primary);
         }
 
-        .bg-neutral {
+        .testimonial {
             background-color: var(--color-neutral);
+            padding: var(--space-xxl) 0;
         }
 
-        .navbar a {
-            display: inline-block;
-            margin-left: var(--space-md);
+        .testimonial-card {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        @media(max-width:600px) {
-            .navbar a {
-                display: block;
-                margin: 8px 0;
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-md);
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #777;
+        }
+
+        .cta-section {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--space-xxl) 0;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin: var(--space-md) 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tablet styles */
+        @media (min-width: 601px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1025px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
 </head>
 
-<body class="p-md">
-
-    <!-- NAVBAR -->
-    <nav class="navbar flex flex-wrap justify-between align-center p-md bg-primary text-neutral rounded">
-        <div class="navbar-brand font-bold">My Design System</div>
-        <div class="navbar-links flex flex-wrap">
-            <a href="#typography">Typography</a>
-            <a href="#buttons">Buttons</a>
-            <a href="#cards">Cards</a>
-            <a href="#forms">Forms</a>
-            <a href="#grid">Grid</a>
+<body>
+    <!-- Header -->
+    <header class="p-md">
+        <div class="container">
+            <div class="flex justify-between align-center">
+                <div class="font-bold text-primary" style="font-size: var(--fs-h3-mobile);">BrandName</div>
+                <nav>
+                    <ul class="flex" style="gap: var(--space-md); list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#features" style="text-decoration: none; color: var(--color-text);">Features</a>
+                        </li>
+                        <li><a href="#testimonials"
+                                style="text-decoration: none; color: var(--color-text);">Testimonials</a></li>
+                        <li><a href="#pricing" style="text-decoration: none; color: var(--color-text);">Pricing</a></li>
+                        <li><button style="background-color: var(--color-primary); color: white;">Get Started</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- TYPOGRAPHY -->
-    <section id="typography">
-        <h1>Typography</h1>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <p class="font-regular">This is body text using your body font.</p>
-        <p class="font-bold">This is bold text.</p>
-        <p class="text-primary">Primary text color</p>
-        <p class="text-secondary">Secondary text color</p>
-    </section>
-
-    <!-- BUTTONS -->
-    <section id="buttons">
-        <h1>Buttons</h1>
-        <button>Default Button</button>
-        <button class="btn-primary m-xs">Primary</button>
-        <button class="btn-secondary m-xs">Secondary</button>
-        <button class="btn-outline m-xs">Outline</button>
-    </section>
-
-    <!-- CARDS -->
-    <section id="cards">
-        <h1>Cards</h1>
-        <div class="row">
-            <div class="col-12 col-6 col-4 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card Title</h3>
-                    <p>Card description text goes here.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="m-md">Transform Your Digital Experience</h1>
+            <p class="m-md" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                Our platform helps businesses grow with cutting-edge solutions designed for today's challenges.
+            </p>
+            <div class="m-lg" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                <button style="background-color: white; color: var(--color-primary);">Start Free Trial</button>
+                <button style="background-color: transparent; border: 2px solid white;">Learn More</button>
             </div>
-            <div class="col-12 col-6 col-4 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card Title</h3>
-                    <p>Another description example.</p>
-                </div>
-            </div>
-            <div class="col-12 col-6 col-4 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card Title</h3>
-                    <p>More text inside the card.</p>
+            <div class="m-xl" style="max-width: 800px; margin: 0 auto;">
+                <div
+                    style="background-color: #f0f0f0; height: 300px; border-radius: var(--card-radius-desktop); display: flex; align-items: center; justify-content: center; color: #777;">
+                    Product Screenshot/Video
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FORMS -->
-    <section id="forms">
-        <h1>Forms</h1>
-        <form>
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" placeholder="Enter name">
+    <!-- Features Section -->
+    <section id="features" class="p-xl">
+        <div class="container">
+            <h2 class="text-center m-lg">Why Choose Our Platform</h2>
+            <p class="text-center m-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                We provide everything you need to build, launch, and grow your digital presence.
+            </p>
+
+            <div class="feature-grid">
+                <div class="card feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast Performance</h3>
+                    <p>Lightning-fast loading times and optimized performance for better user experience.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enterprise-grade security with 99.9% uptime guarantee for your peace of mind.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Fully Responsive</h3>
+                    <p>Looks great on all devices - from mobile phones to desktop computers.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Easy Customization</h3>
+                    <p>Flexible components that adapt to your brand and design requirements.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Comprehensive insights to track performance and make data-driven decisions.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global CDN</h3>
+                    <p>Content delivered fast worldwide with our global content delivery network.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="3" placeholder="Write your message"></textarea>
-            </div>
-            <button class="btn-primary">Submit</button>
-        </form>
+        </div>
     </section>
 
-    <!-- GRID & UTILITIES -->
-    <section id="grid">
-        <h1>Grid & Utilities</h1>
-        <div class="row">
-            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
-            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
-            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
-            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonial">
+        <div class="container">
+            <h2 class="text-center m-lg">What Our Customers Say</h2>
+
+            <div class="testimonial-card card">
+                <div class="avatar">JS</div>
+                <p class="font-medium">"This platform has completely transformed how we approach digital marketing. The
+                    results have been outstanding!"</p>
+                <h4 class="m-sm">Jane Smith</h4>
+                <small>Marketing Director, TechCorp</small>
+            </div>
+
+            <div class="flex justify-center m-xl" style="gap: var(--space-xs);">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-primary);">
+                </div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ddd;"></div>
+            </div>
         </div>
     </section>
 
-    <!-- ADVANCED CARD GRID & POSITIONING -->
-    <section id="advanced-grid">
-        <h1>Advanced Card Grid & Positioning</h1>
+    <!-- Pricing Section -->
+    <section id="pricing" class="p-xl">
+        <div class="container">
+            <h2 class="text-center m-lg">Simple, Transparent Pricing</h2>
+            <p class="text-center m-lg" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                Choose the plan that works best for your business needs.
+            </p>
 
-        <h2>Card Grid Layouts</h2>
-        <div class="row">
-            <div class="col-12 col-6 col-4 col-3 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card 1</h3>
-                    <p>Simple card layout.</p>
+            <div class="row">
+                <div class="col">
+                    <div class="card text-center" style="height: 100%;">
+                        <h3>Starter</h3>
+                        <div class="m-md">
+                            <span style="font-size: var(--fs-h1-mobile); font-weight: bold;">$29</span>
+                            <span>/month</span>
+                        </div>
+                        <ul style="text-align: left; padding-left: var(--space-lg);">
+                            <li class="m-sm">Up to 5 users</li>
+                            <li class="m-sm">Basic analytics</li>
+                            <li class="m-sm">Email support</li>
+                            <li class="m-sm">5GB storage</li>
+                        </ul>
+                        <button class="m-md" style="width: 100%;">Get Started</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-6 col-4 col-3 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card 2</h3>
-                    <p>Responsive columns automatically adjust.</p>
+
+                <div class="col">
+                    <div class="card text-center" style="height: 100%; border: 2px solid var(--color-primary);">
+                        <div
+                            style="background-color: var(--color-primary); color: white; padding: var(--space-sm); margin: -var(--space-md) -var(--space-md) var(--space-md); border-radius: var(--card-radius-mobile) var(--card-radius-mobile) 0 0;">
+                            Most Popular
+                        </div>
+                        <h3>Professional</h3>
+                        <div class="m-md">
+                            <span style="font-size: var(--fs-h1-mobile); font-weight: bold;">$79</span>
+                            <span>/month</span>
+                        </div>
+                        <ul style="text-align: left; padding-left: var(--space-lg);">
+                            <li class="m-sm">Up to 20 users</li>
+                            <li class="m-sm">Advanced analytics</li>
+                            <li class="m-sm">Priority support</li>
+                            <li class="m-sm">50GB storage</li>
+                        </ul>
+                        <button class="m-md" style="width: 100%; background-color: var(--color-primary);">Get
+                            Started</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-6 col-4 col-3 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card 3</h3>
-                    <p>Resize window to see responsiveness.</p>
-                </div>
-            </div>
-            <div class="col-12 col-6 col-4 col-3 demo-card">
-                <div class="card shadow-md p-md">
-                    <h3>Card 4</h3>
-                    <p>Flexible grid using your system.</p>
+
+                <div class="col">
+                    <div class="card text-center" style="height: 100%;">
+                        <h3>Enterprise</h3>
+                        <div class="m-md">
+                            <span style="font-size: var(--fs-h1-mobile); font-weight: bold;">$199</span>
+                            <span>/month</span>
+                        </div>
+                        <ul style="text-align: left; padding-left: var(--space-lg);">
+                            <li class="m-sm">Unlimited users</li>
+                            <li class="m-sm">Custom analytics</li>
+                            <li class="m-sm">24/7 dedicated support</li>
+                            <li class="m-sm">Unlimited storage</li>
+                        </ul>
+                        <button class="m-md" style="width: 100%;">Contact Sales</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <h2 class="mt-lg">Card Overlay Example (Position)</h2>
-        <div class="card shadow-md p-md" style="position: relative; height: 200px;">
-            <img src="https://via.placeholder.com/400x200" alt="placeholder"
-                style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--card-radius-mobile);">
-            <div
-                style="position: absolute; top: 16px; left: 16px; color: white; font-weight: 700; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
-                Overlay Text
-            </div>
-        </div>
-
-        <h2 class="mt-lg">Flex Alignment Examples</h2>
-        <div class="row">
-            <div class="col-6">
-                <div class="card flex justify-start align-center p-md shadow-sm mb-md">
-                    <div class="bg-primary text-neutral p-sm rounded">Start</div>
-                </div>
-                <div class="card flex justify-center align-center p-md shadow-sm mb-md">
-                    <div class="bg-secondary text-neutral p-sm rounded">Center</div>
-                </div>
-                <div class="card flex justify-end align-center p-md shadow-sm">
-                    <div class="bg-primary text-neutral p-sm rounded">End</div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card flex flex-col justify-between align-start p-md shadow-sm" style="height: 200px;">
-                    <div class="bg-secondary text-neutral p-sm rounded mb-sm">Top</div>
-                    <div class="bg-primary text-neutral p-sm rounded">Bottom</div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="mt-lg">Absolute Position Example</h2>
-        <div class="card shadow-md p-md" style="position: relative; height: 150px;">
-            <div
-                style="position: absolute; top: 8px; left: 8px; background-color: var(--color-primary); color: #fff; padding: 8px; border-radius: var(--card-radius-mobile);">
-                Top Left
-            </div>
-            <div
-                style="position: absolute; bottom: 8px; right: 8px; background-color: var(--color-secondary); color: #fff; padding: 8px; border-radius: var(--card-radius-mobile);">
-                Bottom Right
-            </div>
-        </div>
-
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="m-md">Ready to Get Started?</h2>
+            <p class="m-md">Join thousands of satisfied customers today.</p>
+            <div class="m-lg" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                <button style="background-color: white; color: var(--color-primary);">Start Free Trial</button>
+                <button style="background-color: transparent; border: 2px solid white;">Schedule a Demo</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="font-bold" style="font-size: var(--fs-h3-mobile);">BrandName</div>
+            <p class="m-sm">Building the future of digital experiences.</p>
+
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="m-md">
+                <small>© 2023 BrandName. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
