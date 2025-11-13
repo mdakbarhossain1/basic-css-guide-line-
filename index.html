@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design System Demo</title>
+    <link rel="stylesheet" href="design-system.css"> <!-- your master CSS -->
+    <style>
+        body {
+            margin: 0;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-bottom: 16px;
+        }
+
+        .demo-card {
+            margin-bottom: 16px;
+        }
+
+        .bg-neutral {
+            background-color: var(--color-neutral);
+        }
+
+        .navbar a {
+            display: inline-block;
+            margin-left: var(--space-md);
+        }
+
+        @media(max-width:600px) {
+            .navbar a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-md">
+
+    <!-- NAVBAR -->
+    <nav class="navbar flex flex-wrap justify-between align-center p-md bg-primary text-neutral rounded">
+        <div class="navbar-brand font-bold">My Design System</div>
+        <div class="navbar-links flex flex-wrap">
+            <a href="#typography">Typography</a>
+            <a href="#buttons">Buttons</a>
+            <a href="#cards">Cards</a>
+            <a href="#forms">Forms</a>
+            <a href="#grid">Grid</a>
+        </div>
+    </nav>
+
+    <!-- TYPOGRAPHY -->
+    <section id="typography">
+        <h1>Typography</h1>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <p class="font-regular">This is body text using your body font.</p>
+        <p class="font-bold">This is bold text.</p>
+        <p class="text-primary">Primary text color</p>
+        <p class="text-secondary">Secondary text color</p>
+    </section>
+
+    <!-- BUTTONS -->
+    <section id="buttons">
+        <h1>Buttons</h1>
+        <button>Default Button</button>
+        <button class="btn-primary m-xs">Primary</button>
+        <button class="btn-secondary m-xs">Secondary</button>
+        <button class="btn-outline m-xs">Outline</button>
+    </section>
+
+    <!-- CARDS -->
+    <section id="cards">
+        <h1>Cards</h1>
+        <div class="row">
+            <div class="col-12 col-6 col-4 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card Title</h3>
+                    <p>Card description text goes here.</p>
+                </div>
+            </div>
+            <div class="col-12 col-6 col-4 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card Title</h3>
+                    <p>Another description example.</p>
+                </div>
+            </div>
+            <div class="col-12 col-6 col-4 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card Title</h3>
+                    <p>More text inside the card.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMS -->
+    <section id="forms">
+        <h1>Forms</h1>
+        <form>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="3" placeholder="Write your message"></textarea>
+            </div>
+            <button class="btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <!-- GRID & UTILITIES -->
+    <section id="grid">
+        <h1>Grid & Utilities</h1>
+        <div class="row">
+            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
+            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
+            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
+            <div class="col-12 col-6 col-4 p-md text-center bg-neutral rounded shadow-sm">Column</div>
+        </div>
+    </section>
+
+    <!-- ADVANCED CARD GRID & POSITIONING -->
+    <section id="advanced-grid">
+        <h1>Advanced Card Grid & Positioning</h1>
+
+        <h2>Card Grid Layouts</h2>
+        <div class="row">
+            <div class="col-12 col-6 col-4 col-3 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card 1</h3>
+                    <p>Simple card layout.</p>
+                </div>
+            </div>
+            <div class="col-12 col-6 col-4 col-3 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card 2</h3>
+                    <p>Responsive columns automatically adjust.</p>
+                </div>
+            </div>
+            <div class="col-12 col-6 col-4 col-3 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card 3</h3>
+                    <p>Resize window to see responsiveness.</p>
+                </div>
+            </div>
+            <div class="col-12 col-6 col-4 col-3 demo-card">
+                <div class="card shadow-md p-md">
+                    <h3>Card 4</h3>
+                    <p>Flexible grid using your system.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-lg">Card Overlay Example (Position)</h2>
+        <div class="card shadow-md p-md" style="position: relative; height: 200px;">
+            <img src="https://via.placeholder.com/400x200" alt="placeholder"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--card-radius-mobile);">
+            <div
+                style="position: absolute; top: 16px; left: 16px; color: white; font-weight: 700; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+                Overlay Text
+            </div>
+        </div>
+
+        <h2 class="mt-lg">Flex Alignment Examples</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="card flex justify-start align-center p-md shadow-sm mb-md">
+                    <div class="bg-primary text-neutral p-sm rounded">Start</div>
+                </div>
+                <div class="card flex justify-center align-center p-md shadow-sm mb-md">
+                    <div class="bg-secondary text-neutral p-sm rounded">Center</div>
+                </div>
+                <div class="card flex justify-end align-center p-md shadow-sm">
+                    <div class="bg-primary text-neutral p-sm rounded">End</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card flex flex-col justify-between align-start p-md shadow-sm" style="height: 200px;">
+                    <div class="bg-secondary text-neutral p-sm rounded mb-sm">Top</div>
+                    <div class="bg-primary text-neutral p-sm rounded">Bottom</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-lg">Absolute Position Example</h2>
+        <div class="card shadow-md p-md" style="position: relative; height: 150px;">
+            <div
+                style="position: absolute; top: 8px; left: 8px; background-color: var(--color-primary); color: #fff; padding: 8px; border-radius: var(--card-radius-mobile);">
+                Top Left
+            </div>
+            <div
+                style="position: absolute; bottom: 8px; right: 8px; background-color: var(--color-secondary); color: #fff; padding: 8px; border-radius: var(--card-radius-mobile);">
+                Bottom Right
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
